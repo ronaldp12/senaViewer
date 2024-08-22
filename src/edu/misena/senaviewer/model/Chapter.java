@@ -1,6 +1,10 @@
 package edu.misena.senaviewer.model;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Chapter {
+    private static ArrayList<Chapter> capitulos = new ArrayList<>();
     int id;
     private String title;
     private int duration;
@@ -37,5 +41,20 @@ public class Chapter {
 
     public void setYear(int year) {
         this.year = year;
+    }
+    public static void addChapter(Scanner scanner){
+        System.out.println("Ingrese el título del capitulo:");
+        String title = scanner.nextLine();
+        scanner.nextLine();
+
+        System.out.println("Ingrese la duracion del capitulo:");
+        int duration = scanner.nextInt();
+
+        System.out.println("Ingrese el año del capitulo:");
+        int year = scanner.nextInt();
+
+        Chapter capitulo=new Chapter(title,duration,year);
+        capitulos.add(capitulo);
+        System.out.println("Capitulo agregado con exito");
     }
 }

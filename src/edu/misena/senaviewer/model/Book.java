@@ -1,8 +1,13 @@
 package edu.misena.senaviewer.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Book {
+    private static ArrayList<Book> libros = new ArrayList<>();
     int id;
     private String title;
     private Date edititionDate;
@@ -50,6 +55,27 @@ public class Book {
 
     public void setIsbn(int isbn) {
         this.isbn = isbn;
+    }
+    public static void addBook(Scanner scanner) throws ParseException {
+        System.out.println("Ingrese el título del libro:");
+        String title = scanner.nextLine();
+        scanner.nextLine();
+
+        System.out.println("Ingrese la fecha de edicion del libro:");
+        String fecha = scanner.nextLine();
+        SimpleDateFormat convertir = new SimpleDateFormat("dd/MM/yyyy");
+        Date edititionDate= convertir.parse(fecha);
+
+        System.out.println("Ingrese la editorial del libro:");
+        String editorial = scanner.nextLine();
+
+        System.out.println("Ingrese el ISBN del libro:");
+        int isbn = scanner.nextInt();
+        scanner.nextLine();
+
+        Book libro=new Book(title,edititionDate,editorial,isbn);
+        libros.add(libro);
+        System.out.println("Libro agregado con exito");
     }
 
 }
