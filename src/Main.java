@@ -13,23 +13,31 @@ public class Main {
     public static void inicio () throws ParseException {
         Scanner scanner = new Scanner(System.in);
         String menu;
-        int opcion, continuar;
+
+        int opcion, continuar=1;
         do {
-            menu="Elija una opcion\n\n";
-            menu+= "1. Movies\n";
-            menu+= "2. Series\n";
-            menu+= "3. Books\n";
-            menu+= "4. Magazines\n";
-            menu+= "5. Chapter\n";
-            menu+= "6. Report\n";
-            menu+= "7. Report Today\n";
-            menu+= "0. Exit\n";
+            menu = "Elija una opcion\n\n";
+            menu += "1. Movies\n";
+            menu += "2. Series\n";
+            menu += "3. Books\n";
+            menu += "4. Magazines\n";
+            menu += "5. Chapter\n";
+            menu += "6. Report\n";
+            menu += "7. Report Today\n";
+            menu += "0. Exit\n";
             System.out.println(menu);
-            opcion=scanner.nextInt();
-            scanner.nextLine();
+            opcion = scanner.nextInt();
+
+            if (opcion < 0 || opcion > 5){
+                System.out.print("Opcion Invalida. Por favor ingrese un numero del 0 al 5\n");
+            inicio();
+        }
+
             switch (opcion){
 
-                case 0: scanner.close();
+                case 0: System.out.println("Saliste");
+                continuar=2;
+                break;
 
                 case 1:
                     menu="Elija una opcion\n\n";
@@ -105,10 +113,12 @@ public class Main {
                 default:System.out.println("Opcion invalida");
                 break;
             }
-            System.out.print("Desea continuar 1=Si/2=No ");
-            continuar= scanner.nextInt();
+            if (opcion != 0) {
+                System.out.print("Desea continuar 1=Si/2=No ");
+                continuar = scanner.nextInt();
+            }
 
-        }while(continuar == 1);
+        }while(continuar == 1 );
     }
 
     }
