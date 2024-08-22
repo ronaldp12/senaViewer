@@ -15,6 +15,7 @@ public class Movie {
         this.genre=genre;
         this.creator=creator;
         this.duration=duration;
+        this.year=year;
     }
 
     public String getTitle() {
