@@ -12,10 +12,10 @@ public class Movie extends Film {
 
     public Movie(String title, String genre, String creator, int duration){
         super(title, genre, creator, duration);
-        this.title=title;
-        this.genre=genre;
-        this.creator=creator;
-        this.duration=duration;
+        Film.title =title;
+        Film.genre =genre;
+        Film.creator =creator;
+        Film.duration =duration;
         this.year=year;
     }
 
@@ -24,7 +24,7 @@ public class Movie extends Film {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Film.title = title;
     }
 
     public String getGenre() {
@@ -32,7 +32,7 @@ public class Movie extends Film {
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        Film.genre = genre;
     }
 
     public String getCreator() {
@@ -40,7 +40,7 @@ public class Movie extends Film {
     }
 
     public void setCreator(String creator) {
-        this.creator = creator;
+        Film.creator = creator;
     }
 
     public int getDuration() {
@@ -48,7 +48,7 @@ public class Movie extends Film {
     }
 
     public void setDuration(int duration) {
-        this.duration = duration;
+        Film.duration = duration;
     }
 
     public int getYear() {

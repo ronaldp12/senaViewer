@@ -6,12 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Book {
+public class Book extends Publication {
     private static ArrayList<Book> libros = new ArrayList<>();
     int id;
-    private String title;
-    private Date edititionDate;
-    private String editorial;
     String authors;
     private int isbn;
     boolean readed;
@@ -19,9 +16,10 @@ public class Book {
 
 
     public Book(String title, Date ediditionDate, String editorial, int isbn) {
-        this.title = title;
-        this.edititionDate = ediditionDate;
-        this.editorial = editorial;
+        super(title,ediditionDate,editorial);
+        Publication.title = title;
+        Publication.edititionDate = ediditionDate;
+        Publication.editorial = editorial;
         this.isbn = isbn;
     }
 
@@ -30,7 +28,7 @@ public class Book {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Publication.title = title;
     }
 
     public Date getEdititionDate() {
@@ -38,7 +36,7 @@ public class Book {
     }
 
     public void setEdititionDate(Date edititionDate) {
-        this.edititionDate = edititionDate;
+        Publication.edititionDate = edititionDate;
     }
 
     public String getEditorial() {
@@ -46,7 +44,7 @@ public class Book {
     }
 
     public void setEditorial(String editorial) {
-        this.editorial = editorial;
+        Publication.editorial = editorial;
     }
 
     public int getIsbn() {
@@ -56,6 +54,7 @@ public class Book {
     public void setIsbn(int isbn) {
         this.isbn = isbn;
     }
+
     public static void addBook(Scanner scanner) throws ParseException {
         System.out.println("Ingrese el título del libro:");
         String title = scanner.nextLine();

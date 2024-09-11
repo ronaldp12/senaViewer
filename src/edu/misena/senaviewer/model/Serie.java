@@ -13,10 +13,10 @@ public class Serie extends Film {
 
     public Serie(String title, String genre,String creator, int duration) {
         super(title,genre,creator,duration);
-        this.title = title;
-        this.genre = genre;
-        this.creator = creator;
-        this.duration = duration;
+        Film.title = title;
+        Film.genre = genre;
+        Film.creator = creator;
+        Film.duration = duration;
     }
 
     public String getTitle() {
@@ -24,7 +24,7 @@ public class Serie extends Film {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Film.title = title;
     }
 
     public String getGenre() {
@@ -32,7 +32,7 @@ public class Serie extends Film {
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        Film.genre = genre;
     }
 
     public int getDuration() {
@@ -40,8 +40,9 @@ public class Serie extends Film {
     }
 
     public void setDuration(int duration) {
-        this.duration = duration;
+        Film.duration = duration;
     }
+
     public static void addSerie(Scanner scanner){
         System.out.println("Ingrese el título de la serie:");
         String title = scanner.nextLine();

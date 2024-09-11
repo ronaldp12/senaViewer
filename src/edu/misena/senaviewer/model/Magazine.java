@@ -6,18 +6,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Magazine {
+public class Magazine extends Publication {
     private static ArrayList<Magazine> revistas = new ArrayList<>();
     int id;
-    private String title;
-    private Date edititionDate;
-    private String editorial;
     String authors;
 
     public Magazine(String title, Date edititionDate, String editorial) {
-        this.title = title;
-        this.edititionDate = edititionDate;
-        this.editorial = editorial;
+        super(title, edititionDate, editorial);
+        Publication.title = title;
+        Publication.edititionDate = edititionDate;
+        Publication.editorial = editorial;
     }
 
     public String getTitle() {
@@ -25,7 +23,7 @@ public class Magazine {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Publication.title = title;
     }
 
     public Date getEdititionDate() {
@@ -33,7 +31,7 @@ public class Magazine {
     }
 
     public void setEdititionDate(Date edititionDate) {
-        this.edititionDate = edititionDate;
+        Publication.edititionDate = edititionDate;
     }
 
     public String getEditorial() {
@@ -41,7 +39,7 @@ public class Magazine {
     }
 
     public void setEditorial(String editorial) {
-        this.editorial = editorial;
+        Publication.editorial = editorial;
     }
     public static void addMagazine(Scanner scanner) throws ParseException {
         System.out.println("Ingrese el título de la revista:");
