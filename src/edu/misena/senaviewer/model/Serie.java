@@ -3,21 +3,19 @@ package edu.misena.senaviewer.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Serie {
+public class Serie extends Film {
     private static ArrayList<Serie> series = new ArrayList<>();
     int id;
-    private String title;
-    private String genre;
-    String creator;
-    private int duration;
     int year;
     boolean viewed;
     int timeViewed;
     int sessionQuantity;
 
-    public Serie(String title, String genre, int duration) {
+    public Serie(String title, String genre,String creator, int duration) {
+        super(title,genre,creator,duration);
         this.title = title;
         this.genre = genre;
+        this.creator = creator;
         this.duration = duration;
     }
 
@@ -55,7 +53,7 @@ public class Serie {
         System.out.println("Ingrese la duracion de la serie:");
         int duration = scanner.nextInt();
 
-        Serie serie=new Serie(title,genre,duration);
+        Serie serie=new Serie(title,genre,creator,duration);
         series.add(serie);
         System.out.println("Serie agregada con exito");
     }

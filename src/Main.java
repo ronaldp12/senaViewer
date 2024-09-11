@@ -31,7 +31,7 @@ public class Main {
             if (opcion < 0 || opcion > 5){
                 System.out.print("Opcion Invalida. Por favor ingrese un numero del 0 al 5\n");
             inicio();
-        }
+            }
 
             switch (opcion){
 

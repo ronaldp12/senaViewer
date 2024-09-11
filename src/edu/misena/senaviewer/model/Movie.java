@@ -3,18 +3,15 @@ package edu.misena.senaviewer.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Movie {
+public class Movie extends Film {
     private static ArrayList<Movie> peliculas = new ArrayList<>();
     int id;
-    private String title;
-    private String genre;
-    private String creator;
-    private int duration;
     private int year;
     boolean viewed;
     int timeViewed;
 
     public Movie(String title, String genre, String creator, int duration){
+        super(title, genre, creator, duration);
         this.title=title;
         this.genre=genre;
         this.creator=creator;
@@ -61,6 +58,7 @@ public class Movie {
     public void setYear(int year) {
         this.year = year;
     }
+
     public static void addMovie(Scanner scanner){
         System.out.println("Ingrese el título de la pelicula:");
         String title = scanner.nextLine();
