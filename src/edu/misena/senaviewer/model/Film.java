@@ -2,18 +2,18 @@ package edu.misena.senaviewer.model;
 
 public class Film {
     int id;
-    static String title;
-    static String genre;
-    static String creator;
-    static int duration;
+    String title;
+    String genre;
+    String creator;
+    int duration;
     int year;
     boolean viewed;
 
     public Film(String title, String genre, String creator, int duration){
-        this.title=title;
-        this.genre=genre;
-        this.creator=creator;
-        this.duration=duration;
+        this.title =title;
+        this.genre =genre;
+        this.creator =creator;
+        this.duration =duration;
     }
 
     public String getTitle() {
@@ -48,7 +48,13 @@ public class Film {
         this.duration = duration;
     }
 
-    public String toString(){
-        return "Titulo: "+title+"Genero: "+genre+"Creador: "+ creator+"Duarcion: "+duration;
+    @Override
+    public String toString() {
+        return "Film{" +
+                "title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                ", creator='" + creator + '\'' +
+                ", duration=" + duration +
+                '}';
     }
 }

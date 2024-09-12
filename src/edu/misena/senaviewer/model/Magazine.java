@@ -13,34 +13,27 @@ public class Magazine extends Publication {
 
     public Magazine(String title, Date edititionDate, String editorial) {
         super(title, edititionDate, editorial);
-        Publication.title = title;
-        Publication.edititionDate = edititionDate;
-        Publication.editorial = editorial;
+        this.title = title;
+        this.edititionDate = edititionDate;
+        this.editorial = editorial;
     }
 
-    public String getTitle() {
-        return title;
+    public int getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        Publication.title = title;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date getEdititionDate() {
-        return edititionDate;
+    public String getAuthors() {
+        return authors;
     }
 
-    public void setEdititionDate(Date edititionDate) {
-        Publication.edititionDate = edititionDate;
+    public void setAuthors(String authors) {
+        this.authors = authors;
     }
 
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        Publication.editorial = editorial;
-    }
     public static void addMagazine(Scanner scanner) throws ParseException {
         System.out.println("Ingrese el título de la revista:");
         String title = scanner.nextLine();

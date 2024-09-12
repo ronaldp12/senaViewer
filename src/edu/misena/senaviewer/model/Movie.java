@@ -10,45 +10,16 @@ public class Movie extends Film {
     boolean viewed;
     int timeViewed;
 
-    public Movie(String title, String genre, String creator, int duration){
+    public Movie(String title, String genre, String creator, int duration, int year){
         super(title, genre, creator, duration);
-        Film.title =title;
-        Film.genre =genre;
-        Film.creator =creator;
-        Film.duration =duration;
-        this.year=year;
     }
 
-    public String getTitle() {
-        return title;
+    public int getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        Film.title = title;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        Film.genre = genre;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        Film.creator = creator;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        Film.duration = duration;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getYear() {
@@ -57,6 +28,22 @@ public class Movie extends Film {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public boolean isViewed() {
+        return viewed;
+    }
+
+    public void setViewed(boolean viewed) {
+        this.viewed = viewed;
+    }
+
+    public int getTimeViewed() {
+        return timeViewed;
+    }
+
+    public void setTimeViewed(int timeViewed) {
+        this.timeViewed = timeViewed;
     }
 
     public static void addMovie(Scanner scanner){
@@ -76,8 +63,9 @@ public class Movie extends Film {
         System.out.println("Ingrese el año de la pelicula:");
         int year = scanner.nextInt();
 
-        Movie pelicula=new Movie(title,genre,creator,duration);
+        Movie pelicula=new Movie(title,genre,creator,duration, year);
         peliculas.add(pelicula);
         System.out.println("Pelicula agregada con exito");
     }
+
 }

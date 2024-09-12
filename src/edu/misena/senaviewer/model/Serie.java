@@ -9,38 +9,41 @@ public class Serie extends Film {
     int year;
     boolean viewed;
     int timeViewed;
-    int sessionQuantity;
 
     public Serie(String title, String genre,String creator, int duration) {
         super(title,genre,creator,duration);
-        Film.title = title;
-        Film.genre = genre;
-        Film.creator = creator;
-        Film.duration = duration;
     }
 
-    public String getTitle() {
-        return title;
+    public int getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        Film.title = title;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getGenre() {
-        return genre;
+    public int getYear() {
+        return year;
     }
 
-    public void setGenre(String genre) {
-        Film.genre = genre;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public int getDuration() {
-        return duration;
+    public boolean isViewed() {
+        return viewed;
     }
 
-    public void setDuration(int duration) {
-        Film.duration = duration;
+    public void setViewed(boolean viewed) {
+        this.viewed = viewed;
+    }
+
+    public int getTimeViewed() {
+        return timeViewed;
+    }
+
+    public void setTimeViewed(int timeViewed) {
+        this.timeViewed = timeViewed;
     }
 
     public static void addSerie(Scanner scanner){
@@ -50,6 +53,9 @@ public class Serie extends Film {
 
         System.out.println("Ingrese el genero de la serie:");
         String genre = scanner.nextLine();
+
+        System.out.println("Ingrese el creador de la serie:");
+        String creator = scanner.nextLine();
 
         System.out.println("Ingrese la duracion de la serie:");
         int duration = scanner.nextInt();

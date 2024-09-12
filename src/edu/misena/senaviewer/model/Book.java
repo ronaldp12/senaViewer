@@ -17,34 +17,26 @@ public class Book extends Publication {
 
     public Book(String title, Date ediditionDate, String editorial, int isbn) {
         super(title,ediditionDate,editorial);
-        Publication.title = title;
-        Publication.edititionDate = ediditionDate;
-        Publication.editorial = editorial;
+        this.title = title;
+        this.edititionDate = ediditionDate;
+        this.editorial = editorial;
         this.isbn = isbn;
     }
 
-    public String getTitle() {
-        return title;
+    public int getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        Publication.title = title;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date getEdititionDate() {
-        return edititionDate;
+    public String getAuthors() {
+        return authors;
     }
 
-    public void setEdititionDate(Date edititionDate) {
-        Publication.edititionDate = edititionDate;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        Publication.editorial = editorial;
+    public void setAuthors(String authors) {
+        this.authors = authors;
     }
 
     public int getIsbn() {
@@ -53,6 +45,22 @@ public class Book extends Publication {
 
     public void setIsbn(int isbn) {
         this.isbn = isbn;
+    }
+
+    public boolean isReaded() {
+        return readed;
+    }
+
+    public void setReaded(boolean readed) {
+        this.readed = readed;
+    }
+
+    public int getTimeReaded() {
+        return timeReaded;
+    }
+
+    public void setTimeReaded(int timeReaded) {
+        this.timeReaded = timeReaded;
     }
 
     public static void addBook(Scanner scanner) throws ParseException {
