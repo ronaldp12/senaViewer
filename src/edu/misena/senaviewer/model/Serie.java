@@ -9,6 +9,7 @@ public class Serie extends Film {
     int year;
     boolean viewed;
     int timeViewed;
+    int sessionQuantity;
 
     public Serie(String title, String genre,String creator, int duration) {
         super(title,genre,creator,duration);
@@ -44,6 +45,14 @@ public class Serie extends Film {
 
     public void setTimeViewed(int timeViewed) {
         this.timeViewed = timeViewed;
+    }
+
+    public int getSessionQuantity() {
+        return sessionQuantity;
+    }
+
+    public void setSessionQuantity(int sessionQuantity) {
+        this.sessionQuantity = sessionQuantity;
     }
 
     public static void addSerie(Scanner scanner){
