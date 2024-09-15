@@ -1,6 +1,8 @@
 package edu.misena.senaviewer.model;
+import java.util.ArrayList;
 
 public class Film {
+    private static ArrayList<Film> films = new ArrayList<>();
     int id;
     String title;
     String genre;

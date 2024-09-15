@@ -1,8 +1,9 @@
 package edu.misena.senaviewer.model;
-
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Publication {
+    private static ArrayList<Publication> publications = new ArrayList<>();
     String title;
     Date edititionDate;
     String editorial;

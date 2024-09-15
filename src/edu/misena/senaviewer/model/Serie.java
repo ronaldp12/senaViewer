@@ -1,7 +1,6 @@
 package edu.misena.senaviewer.model;
-
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Serie extends Film {
     private static ArrayList<Serie> series = new ArrayList<>();
